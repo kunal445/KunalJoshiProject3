@@ -1,13 +1,18 @@
 .App {
   text-align: center;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .game {
   border: 1px solid red;
-  margin: 20px;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 20%;
+
 }
 
 h1 {
