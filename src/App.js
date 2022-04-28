@@ -27,7 +27,8 @@ import Form from './componenents/Form';
 
 function App() {
 
-  const [allGames, setAllGames] = useState([])
+  const [allGames, setAllGames] = useState([]);
+  const [filteredGames, setFilteredGames] = useState([])
 
   // this code will run once on page load
   useEffect(() => {
@@ -50,13 +51,27 @@ function App() {
 
   }, [])
 
+  const getGames = (e, userChoice) => {
+    e.preventDefault();
+    
+    const copyOfAllGames = [...allGames];
+    
+    const newGames = copyOfAllGames.filter((game)=>{
+      return game.genre === userChoice;
+    });
+    console.log(newGames);
+    
+    setFilteredGames(newGames);
+    // console.log(filteredGames);
+  }
+
 // console.log(allGames);
 
   return (
     <div className="App">
       <h1>Welcome to MMOHunter</h1>
-      <Form />
-      <DisplayGames games = {allGames} />
+      <Form  getGames = {getGames}/>
+      <DisplayGames games = {filteredGames} />
     </div>
   );
 }
