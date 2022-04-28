@@ -1,9 +1,21 @@
 import React from 'react'
+import { useState } from 'react'
 
 const Form = () => {
+    const [userInput, setUserInput] = useState('')
+
+    const handleUserInput = (e) => {
+        console.log(e.target.value);
+    }
+
     return (
             <form action="">
-                <select id='genre' name='genre'>Selected your genre
+                <select 
+                id='genre' 
+                name='genre'
+                onChange={(e)=>{handleUserInput(e)}}
+                >
+                    Selected your genre
                     <option value='MMORPG'>MMORPG</option>
                     <option value='Shooter'>Shooter</option>
                     <option value='Racing'>Racing</option>
