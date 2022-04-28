@@ -49,10 +49,11 @@ function App() {
 
   }, [])
 
-console.log(allGames);
+// console.log(allGames);
 
   return (
     <div className="App">
+      <h1>Welcome to MMOHunter</h1>
       <DisplayGames games = {allGames} />
     </div>
   );
