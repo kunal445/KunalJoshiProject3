@@ -2,12 +2,21 @@ import React from 'react'
 
 const Form = () => {
     return (
-        <div>
             <form action="">
-                <select id='platform' name='platform'>Selected your platform</select>
-                <option value='PC'>PC</option>
+                <select id='genre' name='genre'>Selected your genre
+                    <option value='MMORPG'>MMORPG</option>
+                    <option value='Shooter'>Shooter</option>
+                    <option value='Racing'>Racing</option>
+                    <option value='CardGame'>Card Game</option>
+                    <option value='Social'>Social</option>
+                    <option value='Strategy'>Strategy</option>
+                    <option value='Sports'>Sports</option>
+                    <option value='MOBA'>MOBA</option>
+                    <option value='Fantasy'>Fantasy</option>
+                    <option value='Fighting'>Fighting</option>
+                    <option value='MMO'>MMO</option>
+                    </select>
             </form>
-        </div>
     )
 }
 

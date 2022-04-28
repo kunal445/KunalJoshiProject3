@@ -18,9 +18,10 @@
   width: 100%;
 }
 
-h1 {
+h1, form {
   width: 100%;
 }
+
 
 .App-header {
   background-color: #282c34;

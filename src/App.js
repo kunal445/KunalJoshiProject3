@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import DisplayGames from './componenents/DisplayGames';
+import Form from './componenents/Form';
 
 //#region PsudoCode
 // ---------------------------------psudo code -----------------------------
@@ -54,6 +55,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to MMOHunter</h1>
+      <Form />
       <DisplayGames games = {allGames} />
     </div>
   );
