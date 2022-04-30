@@ -1,17 +1,22 @@
 import React from 'react'
+import firebase from '../firebase'
+import { getDatabase, ref , remove } from 'firebase/database'
 
 const DisplayFirebaseGames = ({savedGames}) => {
+    const removeGame = (gameID) => {
+        const database = getDatabase(firebase);
+        const removeDBRef = ref(database, `/${gameID}`)
+        remove(removeDBRef);
+    }
     return (
         <>
             {
                 savedGames.map(game => {
                     return (
-                        <div key={game.data.id} className='game'>
+                        <div key={game.id} className='game'>
                             <h2>{game.data.title}</h2>
                             <img src={game.data.thumbnail} alt={game.data.short_description} />
-                            <h2>Genre: {game.data.genre}</h2>
-                            <h2>Platform: {game.data.platform}</h2>
-                            <h2>Developer: {game.data.developer}</h2>
+                            <button onClick={() => {removeGame(game.id)}}>Remove this game</button>
                         </div>
                     )
                 })

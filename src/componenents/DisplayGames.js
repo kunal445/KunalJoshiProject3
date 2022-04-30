@@ -1,5 +1,5 @@
 import React from 'react'
-import {getDatabase, ref, onValue, push, remove} from 'firebase/database'
+import {getDatabase, ref, push} from 'firebase/database'
 // config
 import firebase from '../firebase'
 
