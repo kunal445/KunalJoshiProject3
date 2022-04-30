@@ -1,12 +1,13 @@
 // modules
 import { useEffect, useState } from 'react';
-
-
+import { getDatabase, ref, onValue } from 'firebase/database';
+import firebase from './firebase'
 // styles
 import './App.css';
 // components 
 import DisplayGames from './componenents/DisplayGames';
 import Form from './componenents/Form';
+import DisplayFirebaseGames from './componenents/DisplayFirebaseGames';
 
 //#region PsudoCode
 // ---------------------------------psudo code -----------------------------
@@ -34,13 +35,12 @@ function App() {
 
   const [allGames, setAllGames] = useState([]);
   const [filteredGames, setFilteredGames] = useState([])
-
+  const [dbGames, setDBGames] = useState([]) ; 
   // this code will run once on page load
   useEffect(() => {
+    //#region api call
     // using this proxy server because of cors error with the api
-  
     const proxiedUrl = 'https://www.mmobomb.com/api1/games';
-
     const url = new URL('http://proxy.hackeryou.com');
     url.search = new URLSearchParams({
       reqUrl: proxiedUrl,
@@ -53,7 +53,24 @@ function App() {
       setAllGames(data);
       
     });
+    //#endregion
 
+    //#region firebase
+    const database = getDatabase(firebase);
+    const dbRef = ref(database);
+    // getting all the current games in the database
+    onValue(dbRef, (response) => {
+      // and object of objects (need to turn this into an array of objects)
+      const dbData = response.val()
+      const dbGamesArray = [];
+
+      for (const key in dbData) {
+        dbGamesArray.push({id: key, data: dbData[key]})
+      }
+
+      setDBGames(dbGamesArray);
+    })
+    //#endregion
   }, [])
 
   const getGames = (e, userChoice) => {
@@ -76,6 +93,9 @@ function App() {
     <div className="App">
       <h1>Welcome to MMOHunter</h1>
       <Form  getGames = {getGames}/>
+      <h2>these games are from firebase</h2>
+      <DisplayFirebaseGames savedGames = {dbGames} />
+      <h2>these are the games from api</h2>
       <DisplayGames games = {filteredGames} />
     </div>
   );
