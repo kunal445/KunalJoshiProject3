@@ -1,5 +1,10 @@
+// modules
 import { useEffect, useState } from 'react';
+
+
+// styles
 import './App.css';
+// components 
 import DisplayGames from './componenents/DisplayGames';
 import Form from './componenents/Form';
 
@@ -42,12 +47,12 @@ function App() {
     });
 
     fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          // setting the data as a state
-          setAllGames(data);
-          
-        });
+    .then(response => response.json())
+    .then(data => {
+      // setting the data as a state
+      setAllGames(data);
+      
+    });
 
   }, [])
 
