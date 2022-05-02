@@ -10,17 +10,21 @@ const DisplayFirebaseGames = ({savedGames}) => {
     }
     return (
         <>
+            <button>Click to see your saved games</button>
+
+        <div className='firebaseGames'>
             {
                 savedGames.map(game => {
                     return (
-                        <div key={game.id} className='game'>
+                        <li key={game.id} className='game2'>
                             <h2>{game.data.title}</h2>
                             <img src={game.data.thumbnail} alt={game.data.short_description} />
                             <button onClick={() => {removeGame(game.id)}} className="removeButton">X</button>
-                        </div>
+                        </li>
                     )
                 })
             }
+        </div>
         </>
     )
 }

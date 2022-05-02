@@ -81,7 +81,7 @@ function App() {
     const newGames = copyOfAllGames.filter((game)=>{
       return game.genre === userChoice;
     });
-    console.log(newGames);
+    // console.log(newGames);
     
     setFilteredGames(newGames);
     // console.log(filteredGames);
@@ -93,10 +93,8 @@ function App() {
     <div className="App">
       <h1>Welcome to MMOHunter</h1>
       <Form  getGames = {getGames}/>
-      <h2>these games are from firebase</h2>
       <DisplayFirebaseGames savedGames = {dbGames} />
-      <h2>these are the games from api</h2>
-      <DisplayGames games = {filteredGames} />
+      <DisplayGames games = {filteredGames.length === 0 ? allGames : filteredGames} />
     </div>
   );
 }
