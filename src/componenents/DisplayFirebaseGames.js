@@ -16,7 +16,7 @@ const DisplayFirebaseGames = ({savedGames}) => {
                         <div key={game.id} className='game'>
                             <h2>{game.data.title}</h2>
                             <img src={game.data.thumbnail} alt={game.data.short_description} />
-                            <button onClick={() => {removeGame(game.id)}}>Remove this game</button>
+                            <button onClick={() => {removeGame(game.id)}} className="removeButton">X</button>
                         </div>
                     )
                 })
