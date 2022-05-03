@@ -23,10 +23,9 @@ const displayGames = ({games}) => {
                         <li key={game.id} className='game'>
                             <Link to={`/games/${game.id}`}>
                             <h2>{game.title}</h2>
+                            <h3>Genre: {game.genre}</h3>
                             <img src={game.thumbnail} alt={game.short_description} />
-                            <h2>Genre: {game.genre}</h2>
-                            <h2>Platform: {game.platform}</h2>
-                            <h2>Developer: {game.developer}</h2>
+                            {/* <h2>Developer: {game.developer}</h2> */}
                             <button onClick={(e) => {handleUserInput(e, game)}}>Add this game</button>
                             </Link>
                         </li>

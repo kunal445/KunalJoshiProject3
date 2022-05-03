@@ -15,7 +15,7 @@ const DisplayFirebaseGames = ({savedGames}) => {
     return (
         <>
             <button onClick={()=> setShowGames(!ShowGames)
-            }>Click to see your saved games</button>
+            } className = 'firebaseShowButton'>My List</button>
 
         <div className='firebaseGames'>
             {
