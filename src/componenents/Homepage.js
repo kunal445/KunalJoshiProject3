@@ -68,7 +68,7 @@ const Homepage = () => {
             {/* <h1>Welcome to MMOHunter</h1> */}
             <Form  getGames = {getGames}/>
             <p>Click on any of the game images to get more info</p>
-            <a href="#footer" className='contactLink'>Contact</a>
+            <a href="#footer" className='contactLink'>Contact Me!</a>
             <DisplayFirebaseGames savedGames = {dbGames} />
             <DisplayGames games = {filteredGames.length === 0 ? allGames : filteredGames} />
         </div>
