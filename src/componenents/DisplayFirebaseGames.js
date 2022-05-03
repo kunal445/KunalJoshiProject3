@@ -1,8 +1,12 @@
 import React from 'react'
 import firebase from '../firebase'
 import { getDatabase, ref , remove } from 'firebase/database'
+import { useState } from 'react'
 
 const DisplayFirebaseGames = ({savedGames}) => {
+
+    const [ShowGames, setShowGames] = useState(false)
+    // function to remove games from firebase
     const removeGame = (gameID) => {
         const database = getDatabase(firebase);
         const removeDBRef = ref(database, `/${gameID}`)
@@ -10,10 +14,12 @@ const DisplayFirebaseGames = ({savedGames}) => {
     }
     return (
         <>
-            <button>Click to see your saved games</button>
+            <button onClick={()=> setShowGames(!ShowGames)
+            }>Click to see your saved games</button>
 
         <div className='firebaseGames'>
             {
+                ShowGames === false ? null : 
                 savedGames.map(game => {
                     return (
                         <li key={game.id} className='game2'>
@@ -23,6 +29,7 @@ const DisplayFirebaseGames = ({savedGames}) => {
                         </li>
                     )
                 })
+                
             }
         </div>
         </>

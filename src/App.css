@@ -30,7 +30,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   border: 3px solid blue;
-  background-color: rgb(114, 148, 233);
+  background-color: rgb(84, 198, 247);
   border-radius: 15px;
   width: calc(25% - 20px);
 }
@@ -68,6 +68,10 @@ li {
   background-color: rgb(155, 236, 155);
   border-radius: 15px;
   margin-bottom: 10px;
+}
+
+.hideMe {
+  display: none;
 }
 
 .removeButton {
