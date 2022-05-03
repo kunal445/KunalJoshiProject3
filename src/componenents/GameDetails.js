@@ -8,7 +8,7 @@ const GameDetails = () => {
 
     useEffect(() => {
         const proxiedUrl = `https://www.mmobomb.com/api1/game?id=${GameID}`;
-        const url = new URL('http://proxy.hackeryou.com');
+        const url = new URL('https://proxy.hackeryou.com');
         url.search = new URLSearchParams({
         reqUrl: proxiedUrl,
         });
@@ -25,7 +25,7 @@ const GameDetails = () => {
     return (
         <>
             {
-                Object.keys(game).length === 0? "hi" : 
+                Object.keys(game).length === 0? "looks like something went wrong!" : 
                 <section className="details">
                     <div className="mainInfo">
                         <div className="leftDiv">
