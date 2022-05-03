@@ -26,21 +26,21 @@ const GameDetails = () => {
         <>
             {
                 Object.keys(game).length === 0? "hi" : 
-                <div>
+                <section>
                         <h2>{game.title}</h2>
                         <img src={game.thumbnail} alt={game.short_description} />
                         <h2>{game.developer}</h2>
                         <p>{game.short_description}</p>
                         <a href={`${game.game_url}`} target="_blank" rel="noreferrer">Play Now!</a>
-                        <div>
+                        <div className="requirements">
                         <h3>Minumum Requirements</h3>
                         <p>{game.minimum_system_requirements.graphics}</p>
                         <p>RAM: {game.minimum_system_requirements.memory}</p>
-                        <p>{game.minimum_system_requirements.os}</p>
+                        <p>OS: {game.minimum_system_requirements.os}</p>
                         <p>{game.minimum_system_requirements.processor}</p>
-                        <p>{game.minimum_system_requirements.storage}</p>
+                        <p>HD: {game.minimum_system_requirements.storage}</p>
                         </div>
-                    </div>
+                </section>
             }
         </>
         
