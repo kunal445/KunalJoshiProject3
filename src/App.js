@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import GameDetails from './componenents/GameDetails';
 import Homepage from './componenents/Homepage';
+import Footer from './componenents/Footer';
 
 
 //#region PsudoCode
@@ -35,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to MMOHunter</h1>
+      <h1>Welcome to <a href="/" className='logo'>MMOHunter</a></h1>
       {/* <Form  getGames = {getGames}/>
       <DisplayFirebaseGames savedGames = {dbGames} />
       <DisplayGames games = {filteredGames.length === 0 ? allGames : filteredGames} /> */}
@@ -44,6 +45,8 @@ function App() {
         <Route path='/' element = {<Homepage />}/>
         <Route path='/games/:GameID' element={<GameDetails/>} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }

@@ -117,4 +117,14 @@ a button {
   font-weight: bold;
 }
 
+footer {
+  border-top: 2px solid orange;
+  padding-top: 20px;
+  margin-top: 50px;
+}
+
+footer a,
+.logo{
+color: orange;
+}
 /* media queries */

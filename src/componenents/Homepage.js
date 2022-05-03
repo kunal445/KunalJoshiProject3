@@ -8,9 +8,12 @@ import Form from './Form';
 import DisplayFirebaseGames from './DisplayFirebaseGames';
 
 const Homepage = () => {
+  //#region States
     const [allGames, setAllGames] = useState([]);
     const [filteredGames, setFilteredGames] = useState([])
     const [dbGames, setDBGames] = useState([]) ; 
+    //#endregion
+
   // this code will run once on page load
   useEffect(() => {
     //#region api call
