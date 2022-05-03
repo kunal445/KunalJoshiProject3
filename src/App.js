@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to <a href="/" className='logo'>MMOHunter</a></h1>
+      <h1 id='home'>Welcome to <a href="/" className='logo'>MMOHunter</a></h1>
       {/* <Form  getGames = {getGames}/>
       <DisplayFirebaseGames savedGames = {dbGames} />
       <DisplayGames games = {filteredGames.length === 0 ? allGames : filteredGames} /> */}

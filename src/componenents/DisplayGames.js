@@ -21,7 +21,7 @@ const displayGames = ({games}) => {
                 games.map(game => {
                     return (
                         <li key={game.id} className='game'>
-                            <Link to={`/games/${game.id}`}>
+                            <Link to={`/games/${game.id}`} className='resultLink'>
                             <h2>{game.title}</h2>
                             <h3>Genre: {game.genre}</h3>
                             <img src={game.thumbnail} alt={game.short_description} />

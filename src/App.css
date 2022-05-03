@@ -90,6 +90,8 @@ li {
   border-radius: 10px;
   font-weight: bold;
   padding: 10px;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 /* button to remove games from firebase */
@@ -98,23 +100,38 @@ li {
   width: 50%;
 }
 
-a {
+.resultLink {
   color: black;
+  border-radius: 15px;
   text-decoration: none;
   min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: 0.2s;
 }
 
-a button {
+.resultLink:focus, 
+.resultLink:hover {
+  background-color: rgb(28, 117, 241);
+}
+
+.resultLink button {
   margin: 10px 0;
   width: 50%;
   border: 2px solid green;
   border-radius: 10px;
   background-color: rgb(148, 247, 148);
   font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.2s;
+}
+
+.resultLink button:hover,
+.resultLink button:focus {
+  background-color: rgb(25, 204, 25);
 }
 
 footer {
@@ -123,17 +140,83 @@ footer {
   margin-top: 50px;
 }
 
+footer h2 {
+  margin-top: 10px;
+}
+a {
+  text-decoration: none;
+}
+
 footer a,
-.logo{
+.logo,
+.minRequirements,
+.contactLink{
 color: orange;
+transition: 0.2s;
+}
+
+footer a:focus, footer a:hover,
+.logo:focus, .logo:hover,
+.contactLink:focus, .contactLink:hover
+{
+  color: rgb(255, 106, 0);
 }
 
 /* GameDetails page */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .requirements {
   border: 2px solid orange;
   border-radius: 25px;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.mainInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.rightDiv {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftDiv {
+width: 60%;
+}
+
+.leftDiv img {
+  width: 100%;
+}
+
+
+.gameLink {
+  background-color: orange;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: auto;
+  margin-top: 20px;
+  color:black
+}
+
+.gameLink:focus,
+.gameLink:hover,
+.firebaseShowButton:focus, 
+.firebaseShowButton:hover{
+  background-color: rgb(255, 106, 0);
 }
 
 /* media queries */
