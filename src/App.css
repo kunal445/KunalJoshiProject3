@@ -128,3 +128,22 @@ footer a,
 color: orange;
 }
 /* media queries */
+
+@media (max-width:850px ) {
+  .game, .game2 {
+    width: 40%
+  }
+
+}
+
+@media (max-width:530px) {
+  .game, .game2 {
+    width: 80%
+  }
+
+  .firebaseShowButton {
+    padding: 5px;
+    font-size: 0.6rem;
+  }
+
+}
