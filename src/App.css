@@ -21,6 +21,7 @@ ul {
   justify-content: space-between;
   width: 100%;
   gap: 10px;
+  margin-top: 20px;
 }
 
 /* this is the li */
@@ -77,4 +78,9 @@ li {
 .removeButton {
   margin: 10px 0;
   width: 50%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
