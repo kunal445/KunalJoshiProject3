@@ -14,6 +14,7 @@ const DisplayFirebaseGames = ({savedGames}) => {
         const removeDBRef = ref(database, `/${gameID}`)
         remove(removeDBRef);
     }
+    // changed
 
     return (
         <>
