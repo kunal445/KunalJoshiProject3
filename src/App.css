@@ -1,38 +1,262 @@
-.App {
-  text-align: center;
-}
+/* setup snippet  */
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+*, *:before, *:after {box-sizing: inherit}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+
+html {
+  font-size: 125%;
+  background-color: rgb(43, 43, 43);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* this is my wrapper */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ul, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+button, select {
+  font-size: 0.8rem;
+}
+
+h1,
+form {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* api results */
+/* this is the ul */
+.searchResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  width: 100%;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* this is the li */
+.game {
+  border: 3px solid blue;
+  background-color: rgb(84, 198, 247);
+  border-radius: 15px;
+  width: calc(25% - 20px);
+  
+}
+
+.game img, .game2 img {
+  width: 100%;
+}
+
+/* firebase stuff */
+li {
+  list-style: none;
+  width: 100%;
+}
+
+/* firebase ul */
+.firebaseGames {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+/* firebase li */
+.game2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(33% - 20px);
+  border: 3px solid rgb(255, 162, 1);
+  background-color: rgb(249, 192, 85);
+  border-radius: 15px;
+  margin: 20px 0 10px 0;
+  color: black;
+}
+
+.firebaseShowButton{
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  border: 1px solid rgb(255, 162, 1);
+  background-color: rgb(249, 192, 85);
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+/* button to remove games from firebase */
+.removeButton {
+  margin: 10px 0;
+  width: 50%;
+}
+
+.resultLink {
+  color: black;
+  border-radius: 15px;
+  text-decoration: none;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.resultLink:focus, 
+.resultLink:hover {
+  background-color: rgb(28, 117, 241);
+}
+
+.resultLink button {
+  margin: 10px 0;
+  width: 50%;
+  border: 2px solid green;
+  border-radius: 10px;
+  background-color: rgb(148, 247, 148);
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.2s;
+}
+
+.resultLink button:hover, .resultLink button:focus {
+  background-color: rgb(25, 204, 25);
+}
+
+footer {
+  border-top: 2px solid orange;
+  padding-top: 20px;
+  margin-top: 50px;
+}
+
+footer h2 {
+  margin-top: 10px;
+}
+
+footer a, .logo, .minRequirements, .contactLink{
+color: orange;
+transition: 0.2s;
+}
+
+footer a:focus, footer a:hover,
+.logo:focus, .logo:hover,
+.contactLink:focus, .contactLink:hover
+{
+  color: rgb(255, 106, 0);
+}
+
+/* GameDetails page */
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.requirements {
+  border: 2px solid orange;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.mainInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.rightDiv {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftDiv {
+width: 50%;
+margin-right: 10px;
+}
+
+.leftDiv img {
+  width: 100%;
+}
+
+.gameLink {
+  background-color: orange;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: auto;
+  margin-top: 20px;
+  color:black
+}
+
+.gameLink:focus, .gameLink:hover,
+.firebaseShowButton:focus, .firebaseShowButton:hover{
+  background-color: rgb(255, 106, 0);
+}
+
+/* media queries */
+
+@media (max-width:850px ) {
+  .game, .game2 {
+    width: 40%
   }
-  to {
-    transform: rotate(360deg);
+
+  .mainInfo {
+    flex-direction: column;
+    align-items: center;
   }
+  
+  .leftDiv {
+    width: 90%;
+  }
+  
+  .rightDiv {
+    width: 90%;
+  }
+
+}
+
+@media (max-width:530px) {
+  .game, .game2 {
+    width: 80%
+  }
+
+  .firebaseShowButton {
+    padding: 5px;
+    font-size: 0.6rem;
+  }
+
 }

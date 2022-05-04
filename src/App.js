@@ -1,23 +1,49 @@
-import logo from './logo.svg';
+// styles
 import './App.css';
 
+import { Route, Routes } from 'react-router-dom';
+import GameDetails from './componenents/GameDetails';
+import Homepage from './componenents/Homepage';
+import Footer from './componenents/Footer';
+
+
+//#region PsudoCode
+// ---------------------------------psudo code -----------------------------
+// MVP- react app
+
+// description: make api call to mmobomb api and display the results
+
+// setup useEffect hook to perform the api call once the page is loaded
+// use the proxy server to perform the network call to the api
+// create a state to store all the games as an array of objects
+
+// create a component to display the game objects
+// pass the state into the component via props
+
+// - filter the loaded data using the user input
+// then create a new array with the filtered games 
+// display the results
+
+// STRECH GOALS
+// - use firebase to add games to the favorites list
+// - let the user search for a specific game by text input
+//#endregion
+
 function App() {
+
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 id='home'>Welcome to <a href="/" className='logo'>MMOHunter</a></h1>
+      
+      <Routes>
+        <Route path='/' element = {<Homepage />}/>
+        <Route path='/games/:GameID' element={<GameDetails/>} />
+      </Routes>
+
+      <Footer />
     </div>
   );
 }
