@@ -184,11 +184,11 @@ footer a:focus, footer a:hover,
 .mainInfo {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
 }
 
 .rightDiv {
-  width: 40%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,7 +196,8 @@ footer a:focus, footer a:hover,
 }
 
 .leftDiv {
-width: 60%;
+width: 50%;
+margin-right: 10px;
 }
 
 .leftDiv img {
