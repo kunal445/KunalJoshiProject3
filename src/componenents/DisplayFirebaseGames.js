@@ -17,21 +17,21 @@ const DisplayFirebaseGames = ({savedGames}) => {
             <button onClick={()=> setShowGames(!ShowGames)
             } className = 'firebaseShowButton'>My List</button>
 
-        <div className='firebaseGames'>
-            {
-                ShowGames === false ? null : 
-                savedGames.map(game => {
-                    return (
-                        <li key={game.id} className='game2'>
-                            <h2>{game.data.title}</h2>
-                            <img src={game.data.thumbnail} alt={game.data.short_description} />
-                            <button onClick={() => {removeGame(game.id)}} className="removeButton">X</button>
-                        </li>
-                    )
-                })
-                
-            }
-        </div>
+            <ul className='firebaseGames'>
+                {
+                    ShowGames === false ? null : 
+                    savedGames.map(game => {
+                        return (
+                            <li key={game.id} className='game2'>
+                                <h2>{game.data.title}</h2>
+                                <img src={game.data.thumbnail} alt={game.data.short_description} />
+                                <button onClick={() => {removeGame(game.id)}} className="removeButton">X</button>
+                            </li>
+                        )
+                    })
+                    
+                }
+            </ul>
         </>
     )
 }
