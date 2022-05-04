@@ -11,7 +11,8 @@ const displayGames = ({games}) => {
 
     const handleUserInput = (e, gameToAdd) => {
         e.preventDefault();
-        push(dbRef, gameToAdd)
+        push(dbRef, gameToAdd);
+        alert(`${gameToAdd.title} has been added`)
     }
 
     return (
