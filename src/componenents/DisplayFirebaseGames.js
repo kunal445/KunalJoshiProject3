@@ -4,21 +4,26 @@ import { getDatabase, ref , remove } from 'firebase/database'
 import { useState } from 'react'
 
 const DisplayFirebaseGames = ({savedGames}) => {
-
+    //#region states
     const [ShowGames, setShowGames] = useState(false)
+    //#endregion
+
     // function to remove games from firebase
     const removeGame = (gameID) => {
         const database = getDatabase(firebase);
         const removeDBRef = ref(database, `/${gameID}`)
         remove(removeDBRef);
     }
+
     return (
         <>
+            {/* a toogle feature using states to show saved games*/}
             <button onClick={()=> setShowGames(!ShowGames)
             } className = 'firebaseShowButton'>My List</button>
 
             <ul className='firebaseGames'>
                 {
+                    // conditonal render to only show games when the user clicks on the button to see their saved games
                     ShowGames === false ? null : 
                     savedGames.map(game => {
                         return (

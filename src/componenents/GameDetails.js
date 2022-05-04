@@ -2,11 +2,15 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 
 const GameDetails = () => {
+    //#region hooks and states
     const { GameID } = useParams();
-
     const [game, setGame] = useState([])
+    //#endregion
 
+    // this code will only run once on page load if gameID exists
     useEffect(() => {
+
+        //#region  api call
         const proxiedUrl = `https://www.mmobomb.com/api1/game?id=${GameID}`;
         const url = new URL('https://proxy.hackeryou.com');
         url.search = new URLSearchParams({
@@ -16,10 +20,10 @@ const GameDetails = () => {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-      // setting the data as a state
         setGame(data);
     });
 
+    //#endregion
     }, [GameID])
 
     return (
@@ -49,8 +53,6 @@ const GameDetails = () => {
                 </section>
             }
         </>
-        
-        
     )
 }
 

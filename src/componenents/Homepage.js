@@ -38,7 +38,7 @@ const Homepage = () => {
     const dbRef = ref(database);
     // getting all the current games in the database
     onValue(dbRef, (response) => {
-      // and object of objects (need to turn this into an array of objects)
+      // response is an object of objects (need to turn this into an array of objects)
       const dbData = response.val()
       const dbGamesArray = [];
 
@@ -51,9 +51,11 @@ const Homepage = () => {
     //#endregion
   }, [])
 
+  // this funtion gets the user input from the form componenet to filter out the games by genre
   const getGames = (e, userChoice) => {
     e.preventDefault();
     
+    // creating a copy so we dont mutate the orginal array
     const copyOfAllGames = [...allGames];
     
     const newGames = copyOfAllGames.filter((game)=>{
@@ -65,7 +67,6 @@ const Homepage = () => {
 
     return (
         <div>
-            {/* <h1>Welcome to MMOHunter</h1> */}
             <Form  getGames = {getGames}/>
             <p>Click on any of the game images to get more info</p>
             <a href="#footer" className='contactLink'>Contact Me!</a>

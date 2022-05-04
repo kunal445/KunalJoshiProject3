@@ -1,7 +1,7 @@
 // styles
+import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import GameDetails from './componenents/GameDetails';
 import Homepage from './componenents/Homepage';
 import Footer from './componenents/Footer';
@@ -37,9 +37,6 @@ function App() {
   return (
     <div className="App">
       <h1 id='home'>Welcome to <a href="/" className='logo'>MMOHunter</a></h1>
-      {/* <Form  getGames = {getGames}/>
-      <DisplayFirebaseGames savedGames = {dbGames} />
-      <DisplayGames games = {filteredGames.length === 0 ? allGames : filteredGames} /> */}
       
       <Routes>
         <Route path='/' element = {<Homepage />}/>

@@ -5,10 +5,12 @@ import firebase from '../firebase'
 import { Link } from 'react-router-dom'
 
 const displayGames = ({games}) => {
-
+    //#region states
     const database = getDatabase(firebase);
     const dbRef = ref(database);
+    //#endregion
 
+    // adds the selected game to firebase
     const handleUserInput = (e, gameToAdd) => {
         e.preventDefault();
         push(dbRef, gameToAdd);
@@ -25,7 +27,6 @@ const displayGames = ({games}) => {
                             <h2>{game.title}</h2>
                             <h3>Genre: {game.genre}</h3>
                             <img src={game.thumbnail} alt={game.short_description} />
-                            {/* <h2>Developer: {game.developer}</h2> */}
                             <button onClick={(e) => {handleUserInput(e, game)}}>Add this game</button>
                             </Link>
                         </li>
