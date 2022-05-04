@@ -2,9 +2,9 @@
 import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
-import GameDetails from './componenents/GameDetails';
-import Homepage from './componenents/Homepage';
-import Footer from './componenents/Footer';
+import GameDetails from './Componenents/GameDetails';
+import Homepage from './Componenents/Homepage';
+import Footer from './Componenents/Footer';
 
 
 //#region PsudoCode

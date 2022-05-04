@@ -34,7 +34,6 @@ const DisplayFirebaseGames = ({savedGames}) => {
                             </li>
                         )
                     })
-                    
                 }
             </ul>
         </>

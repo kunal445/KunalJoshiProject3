@@ -10,6 +10,7 @@ const Form = ({getGames}) => {
 
     return (
             <form onSubmit={(e) => {getGames(e, userInput)}}>
+                <label htmlFor="genre" className='sr-only'>Select a Genre</label>
                 <select 
                 id='genre' 
                 name='genre'
