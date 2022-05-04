@@ -72,6 +72,7 @@ li {
 .game2 {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: calc(33% - 20px);
   border: 3px solid rgb(255, 162, 1);
@@ -238,7 +239,7 @@ width: 60%;
   .rightDiv {
     width: 90%;
   }
-  
+
 }
 
 @media (max-width:530px) {
